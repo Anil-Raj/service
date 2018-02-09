@@ -1,3 +1,4 @@
+using System;
 namespace service.Models
 {
     public class TransactionItem
@@ -6,5 +7,7 @@ namespace service.Models
         public string Description { get; set; }
         public string Category { get; set; }
         public int Amount { get; set; }
+        public DateTime  time { get; set; }
+
     }
 }

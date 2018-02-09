@@ -25,14 +25,9 @@ namespace service
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // services.AddDbContext<TodoContext>(opt => opt.UseInMemoryDatabase("TodoList"));
-            
             services.AddMvc();
-            // services.AddDbContext<TodoContext>(options =>options.UseSqlite("Data Source=MvcEmployee.db"));  
-            // services.AddDbContext<TodoContext>();  
             services.AddDbContext<TodoContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            // services.AddDbContext<TodoContext>(options =>
-            //     options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
